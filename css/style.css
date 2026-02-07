@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Merriweather', Georgia, serif;
+  background-color: #111;
+  color: #e8e8e8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #e8e8e8;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Navigation ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 36px;
+  padding: 0 40px;
+  height: 120px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 100px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-links a.active {
+  opacity: 0.5;
+}
+
+/* ── Main content ── */
+.main {
+  margin-top: 120px;
+  flex: 1;
+}
+
+/* ── Home / Projects page ── */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 40px;
+}
+
+.project-tile {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 200px);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.project-tile-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-tile-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.22);
+  transition: background 0.3s ease;
+}
+
+.project-tile:hover .project-tile-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.project-tile:hover .project-tile-bg {
+  transform: scale(1.02);
+}
+
+.project-tile-title {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ── About page ── */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px 80px;
+  min-height: calc(100vh - 120px);
+}
+
+.about-icon-top {
+  width: 180px;
+  margin-bottom: 48px;
+}
+
+.about-text {
+  max-width: 640px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #ccc;
+}
+
+.about-text .highlight {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.about-text .secret {
+  margin-top: 32px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-style: italic;
+}
+
+.about-icon-bottom {
+  width: 180px;
+  margin-top: 60px;
+}
+
+/* ── Contact page ── */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  min-height: calc(100vh - 120px);
+}
+
+.contact-cards {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.contact-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 40px 36px;
+  width: 340px;
+  text-align: center;
+}
+
+.contact-card-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.contact-card-role {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.contact-card-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #e8e8e8;
+  border: 1px solid #444;
+  padding: 8px 20px;
+  border-radius: 3px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-card-link:hover {
+  border-color: #888;
+  opacity: 1;
+}
+
+.contact-card-email {
+  display: block;
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 12px;
+}
+
+.contact-card-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-note {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #fff;
+  font-style: italic;
+}
+
+/* ── Project detail page ── */
+.project-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.project-detail-header {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.project-detail-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #999;
+  margin-bottom: 48px;
+}
+
+.project-detail-media {
+  margin-bottom: 8px;
+}
+
+.project-detail-media img,
+.project-detail-media video {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.project-detail-caption {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+  font-style: italic;
+  margin-bottom: 48px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .project-tile-title {
+    bottom: 24px;
+    left: 24px;
+    font-size: 1.4rem;
+  }
+
+  .about-icon-top,
+  .about-icon-bottom {
+    width: 120px;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .contact-cards {
+    gap: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .project-detail {
+    padding: 40px 16px 60px;
+  }
+
+  .project-detail-header {
+    font-size: 1.2rem;
+  }
+}
